@@ -6,8 +6,8 @@ const userSchema = new Schema(
   {
     username: { type: String, required: true, unique: true, trim: true }, // Fixed unique, trimmed properties
     email: { type: String, required: true, unique: true },
-    thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }], // Reference to the Thought model
-    friends: [{ type: Schema.Types.ObjectId, ref: 'User' }], // Self-reference to User model
+    thoughts: [{ type: Schema.Types.ObjectId, ref: Thought }], // Reference to the Thought model
+    friends: [{ type: Schema.Types.ObjectId, ref: User }], // Self-reference to User model
   },
   {
     toJSON: {
