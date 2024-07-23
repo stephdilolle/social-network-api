@@ -1,4 +1,4 @@
-const { User } = require('../models/user');
+const { User } = require('../models');
 
 // get all users 
 module.exports = {
@@ -51,6 +51,7 @@ async updateUser(req, res) {
       const dbUserData = await User.create(req.body);
       res.json(dbUserData);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },

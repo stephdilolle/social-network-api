@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 // Define the user schema using a function
-const createUserSchema = () => {
   const userSchema = new Schema(
     {
       username: { type: String, required: true, unique: true, trim: true },
@@ -22,10 +21,7 @@ const createUserSchema = () => {
     return this.friends.length;
   });
 
-  return userSchema;
-};
-
 // Initialize the User model
-const User = model('User', createUserSchema());
+const User = model('user', userSchema);
 
 module.exports = User;

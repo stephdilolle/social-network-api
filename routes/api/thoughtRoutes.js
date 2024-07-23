@@ -6,11 +6,11 @@ const {
   updateThought,
 } = require('../../controllers/thoughtControllers');
 
-router.route('/api/thoughts')
+router.route('/')
   .get(getThoughts)
   .post(createThought);
 
-router.route('/api/thoughts/:thoughtId/reactions')
+router.route('/:thoughtId/reactions')
   .get(getSingleThought)
   .put(updateThought);
 
