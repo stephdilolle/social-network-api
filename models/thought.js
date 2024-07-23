@@ -1,5 +1,13 @@
 const { Schema, model } = require('mongoose');
 
+// define reaction schema
+const reactionSchema = new Schema({
+  reactionId: { type: Schema.Types.ObjectId, default: () => new Schema.Types.ObjectId() },
+  reactionBody: { type: String, required: true },
+  username: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now }
+});
+
 // Schema to create Thought model
 const thoughtSchema = new Schema(
   {
@@ -16,12 +24,6 @@ const thoughtSchema = new Schema(
   }
 );
 
-const reactionSchema = new Schema({
-  reactionId: { type: Schema.Types.ObjectId, default: () => new Schema.Types.ObjectId() },
-  reactionBody: { type: String, required: true },
-  username: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
-});
 
 // Create a virtual property `reactionCount` that retrieves the length of the thought's reactions array field on query
 thoughtSchema.virtual('reactionCount').get(function () {

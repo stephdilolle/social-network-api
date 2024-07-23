@@ -1,0 +1,30 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "Social Network API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "npm run dev",
+    "seed": "npm run seed"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "social-network-api"
+  },
+  "keywords": [
+    "social",
+    "networking"
+  ],
+  "author": "Stephanie DiLolle",
+  "license": "MIT"
+}
+
+  
